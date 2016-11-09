@@ -1354,9 +1354,9 @@ Some influential environment variables:
   CPPFLAGS    (Objective) C/C++ preprocessor flags, e.g. -I<include dir> if
               you have headers in a nonstandard directory <include dir>
   CPP         C preprocessor
-  LUA         The Lua interpreter, e.g. /usr/bin/lua5.1
-  LUA_INCLUDE The Lua includes, e.g. -I/usr/include/lua5.1
-  LUA_LIB     The Lua library, e.g. -llua5.1
+  LUA         The Lua interpreter, e.g. /usr/bin/lua5.2
+  LUA_INCLUDE The Lua includes, e.g. -I/usr/include/lua5.2
+  LUA_LIB     The Lua library, e.g. -llua5.2
 
 Use these variables to override the choices made by `configure' or to help
 it to find libraries and programs with nonstandard names/locations.
