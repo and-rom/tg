@@ -1,0 +1,75 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:          telegram-cli
+# Required-Start:
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Commandline interface for Telegram chat program
+# Description:       Telegram-cli is a (unofficial) cli version of Telegram to chat from your console.
+#                    This is an init script do make it a daemon.
+#                    When used as daemon in conjuction  with LUA (scripting) you can use it to send your system
+#                    commands to execute via other Telegram apps (PC - Phone - Web or other) while not
+#                    logged in to the system.
+#
+#                    Note #1: This version of the init script is developed for raspbian (rapberry PI port of Debian Wheezy).
+#
+#                    Note #2: Change the ¨DAEMON=¨ var to match your installation path of telegram-cli
+#
+#                    See: https://github.com/vysheng/tg for more information.
+### END INIT INFO
+
+PATH=/sbin:/usr/sbin:/bin:/usr/bin
+DESC="Telegram-cli"
+NAME=telegram-cli
+DAEMON=/usr/bin/$NAME
+PIDFILE=/var/run/$NAME.pid
+
+. /lib/lsb/init-functions
+
+# Read configuration variable file if it is present
+[ -r /etc/default/$NAME ] && . /etc/default/$NAME
+
+# Load the VERBOSE setting and other rcS variables
+. /lib/init/vars.sh
+
+start() {
+    echo -n "Starting $DESC ... "
+    start-stop-daemon --start --background --make-pidfile $PIDFILE --pidfile $PIDFILE \
+        --exec $DAEMON -- $OPTS || true
+    echo "Done."
+}
+
+stop() {
+    echo -n "Stopping $DESC ... "
+    start-stop-daemon --stop --retry 2 --pidfile $PIDFILE \
+        --exec $DAEMON || true
+    echo "Done."
+}
+
+# Carry out specific functions when asked to by the system
+case "$1" in
+
+    start)
+        start
+    ;;
+
+    stop)
+        stop
+    ;;
+    restart)
+        stop
+        start
+    ;;
+
+    status)
+        status_of_proc -p $PIDFILE $DAEMON $NAME && exit 0 || exit $?
+    ;;
+
+    *)
+        N=/etc/init.d/$NAME
+        echo "Usage $NAME: $N {start|stop|restart|status}"
+        exit 1
+    ;;
+
+esac

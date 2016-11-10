@@ -1,8 +1,9 @@
 bin/telegram-cli usr/bin
 tg-server.pub etc/telegram-cli
+telegram-cli.conf.sample etc/telegram-cli
 
-#bin/telegram-cli usr/share/telegram-daemon/bin
-#start-telegram-daemon /usr/share/telegram-daemon/bin
 test.lua var/lib/telegram-cli/
 tg-test.py var/lib/telegram-cli/
+#bin/telegram-cli usr/share/telegram-daemon/bin
+#start-telegram-daemon /usr/share/telegram-daemon/bin
 #telegram-daemon etc/init.d

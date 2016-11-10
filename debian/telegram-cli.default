@@ -1,0 +1,9 @@
+#
+# Default setting voor telegram-cli sourced in /etc/init.d/telegram-cli.
+#
+# For the different options execute: 'telegram-cli --help'.
+#
+# Note: use the -R -C option if you want to write to log file. Otherwise it will just print garbage.
+#
+#
+OPTS="--username telegramd --groupname telegramd --rsa-key /etc/telegram-cli/tg-server.pub --bot --daemonize -vvvv --log-level 0 --logname /var/log/telegram-cli/telegram-cli.log --config /etc/telegram-cli/telegram-cli.conf --tcp-port 8002"

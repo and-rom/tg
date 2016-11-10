@@ -1,0 +1,31 @@
+default_profile = "main";
+
+main = {
+  config_directory = "/var/lib/telegram-cli/.telegram-cli";
+};
+
+lua = {
+  config_directory = "/var/lib/telegram-cli/.telegram-cli";
+  lua_script = "/var/lib/telegram-cli/test.lua";
+};
+
+python = {
+  config_directory = "/var/lib/telegram-cli/.telegram-cli";
+  python_script = "/var/lib/telegram-cli/tg-test.py";
+};
+
+#sample = {
+#  test = false;
+#  config_directory = "/var/lib/telegram-cli/.telegram-cli";
+#  log_level = 0;
+#  msg_num = true;
+#  auth_file = "/var/lib/telegram-cli/.telegram-cli/auth";
+#  downloads = "/var/lib/telegram-cli/.telegram-cli/downloads";
+#  state_file = "/var/lib/telegram-cli/.telegram-cli/state";
+#  lua_script = "/var/lib/telegram-cli/test.lua";
+#  python_script = "/var/lib/telegram-cli/tg-test.py";
+#  binlog_enabled = true;
+#  binlog = "binlog.bin";
+#  pfs_enabled = true;
+#  secret = "/var/lib/telegram-cli/.telegram-cli/secret";
+#};

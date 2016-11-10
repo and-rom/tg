@@ -1,0 +1,2 @@
+update-rc.d -f telegram-cli defaults
+cp /etc/telegram-cli/telegram-cli.conf.sample /etc/telegram-cli/telegram-cli.conf
