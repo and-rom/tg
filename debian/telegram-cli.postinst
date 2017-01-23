@@ -1,2 +1,5 @@
 update-rc.d -f telegram-cli defaults
 cp /etc/telegram-cli/telegram-cli.conf.sample /etc/telegram-cli/telegram-cli.conf
+mkdir /var/log/telegram-cli
+chgrp telegramd /var/log/telegram-cli
+chmod g+w,o+r /var/log/telegram-cli/
